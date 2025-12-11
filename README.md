@@ -1,6 +1,6 @@
 # Active-Directory-Homelab
 
-![Network Diagram](network-diagram.png)
+![Network Diagram](network_diagram.png)
 
 ## Network Overview
 
