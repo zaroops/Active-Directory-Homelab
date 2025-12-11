@@ -40,6 +40,9 @@ Domain Name: homelb.local
 | Windows-10-Server     | Windows 10 Home |   192.168.75.136 | Domain Joined Client, User|
 | Kali-Linux | Kali Linux  |192.168.75.134| Attacker VM|
 
+## Network Explanation
+
+This network involved me utilizing VMware Workstation pro, configured on a NAT (private network on a single IP address), which was a hypervisor (virtualization software that creates and runs Virtual Machines) for my virtual machines on said private network. My goal was to learn how to use Microsoft Active Directory and to familiarize myself with it, alongside onboarding users and creating my own simulated corporate environment. I also took it a step further by introducing an attacker machine, to not only learn how active directory domain services work, but also how to exdploit vulnerabilities within active directory domain services. This involved setting up my windows 2022 server as the domain controller and dns server for my windows 10 machine, and then configure my kali linux attacker VM to be able to see said local network. 
 
 ## Draft overlay
 
