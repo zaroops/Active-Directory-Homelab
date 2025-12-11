@@ -8,9 +8,28 @@ This lab uses a single NAT network inside VMware Workstation.
 All machines share the same subnet 192.168.75.0/24.
 
 
-## Draft overlay
+## 🛡️ Active Directory Home Lab for Red Teaming + IT Skills
 
-Full diagram insertion/
+This project documents the creation of a full Active Directory enterprise environment built using VMware Workstation, Windows Server 2022, Windows 10, and Kali Linux.
+
+The goal was to simulate a real corporate domain environment to learn:
+
+• Windows Server administration
+
+• Active Directory & Group Policy
+
+• User & computer management
+
+• DNS and DHCP
+
+• Networking fundamentals
+
+• Red team attack techniques
+
+• Blue team analysis and detection
+
+
+## Draft overlay
 
 Overview/
 
