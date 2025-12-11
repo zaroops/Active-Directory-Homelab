@@ -35,10 +35,10 @@ Network: NAT (vmnet8)
 Domain Name: homelb.local
 
 | Machine        | OS           | IP Address  | Role  |
-| ------------- |:-------------:| -----:| -----:|
-| Wiindows-Server-2022 | Windows Server 2022 | $1600 | -----:|
-| Windows-10-Server     | Windows 10 Home |   $12 | -----:|
-| Kali-Linux | Kali Linux  |    $1 | -----:|
+| ------------- |:-------------:| :-----:| -----:|
+| Wiindows-Server-2022 | Windows Server 2022 | 192.168.75.133 | Domain Controller, DNS server|
+| Windows-10-Server     | Windows 10 Home |   192.168.75.136 | Domain Joined Client, User|
+| Kali-Linux | Kali Linux  |192.168.75.134| Attacker VM|
 
 
 ## Draft overlay
