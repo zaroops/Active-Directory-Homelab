@@ -36,9 +36,9 @@ Domain Name: homelb.local
 
 | Machine        | OS           | IP Address  | Role  |
 | ------------- |:-------------:| -----:| -----:|
-| col 3 is      | right-aligned | $1600 | -----:|
-| col 2 is      | centered      |   $12 | -----:|
-| zebra stripes | are neat      |    $1 | -----:|
+| Wiindows-Server-2022 | Windows Server 2022 | $1600 | -----:|
+| Windows-10-Server     | Windows 10 Home |   $12 | -----:|
+| Kali-Linux | Kali Linux  |    $1 | -----:|
 
 
 ## Draft overlay
