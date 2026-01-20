@@ -44,25 +44,107 @@ Domain Name: homelb.local
 
 This network involved me utilizing VMware Workstation pro, configured on a NAT (private network on a single IP address), which was a hypervisor (virtualization software that creates and runs Virtual Machines) for my virtual machines on said private network. My goal was to learn how to use Microsoft Active Directory and to familiarize myself with it, alongside onboarding users and creating my own simulated corporate environment. I also took it a step further by introducing an attacker machine, to not only learn how active directory domain services work, but also how to exploit vulnerabilities within active directory domain services. Though not included in this lab, iI have a separate repository detailing my attacks. This involved setting up my windows 2022 server as the domain controller and dns server for my windows 10 machine, and then configure my kali linux attacker VM to be able to see said local network. 
 
-## 🛠️ Step-By-Step Setup
 
-1. The first step for anything was to download the iso files for each corresponding mach ine
+## Active Directory Enterprise Lab 
 
+## Overview
 
-## Draft overlay
+This lab establishes a **baseline enterprise Active Directory environment** that serves as the foundation for future offensive security testing, detection engineering, and SOC simulations.
 
-Overview/
+The purpose of this phase is to build a **clean, functional, and realistic Active Directory domain** that mirrors a small-to-mid-sized enterprise. No attacks or security tooling are introduced at this stage. The focus is on **correct configuration, domain functionality, and operational realism**.
 
-VM list/
+This environment will later be leveraged for:
+- Active Directory attack simulations
+- Red team vs blue team exercises
+- SIEM log ingestion and SOC analysis
 
-Network explanation/
+## Network Explanation
 
-Step-by-step setup/
+The lab operates on an **isolated internal virtual network** to simulate an enterprise LAN while preventing exposure to external networks.
 
-Learning objectives/
+### Network Characteristics
+- Internal LAN-only communication between VMs
+- No direct internet exposure to domain assets
+- Static IP assignment for the Domain Controller
 
-Commands used/
+### Logical Flow
+- **DC01** provides authentication, authorization, and DNS services
+- **WIN10-01** functions as a standard employee workstation
+- All authentication and domain traffic flows through the Domain Controller
 
-Attack paths (optional)/
+This design ensures:
+- Stable domain functionality
+- Predictable authentication behavior
+- A controlled baseline for future attack simulations
 
-Screenshots layout/
+---
+
+## Step-by-Step Setup
+
+### 1. Hypervisor & Network Setup
+- Hypervisor: VMware Workstation
+- Created an **Internal Network** for lab communication
+- Configured temporary NAT access for operating system updates
+
+---
+
+### 2. Domain Controller Setup (DC01)
+- Installed Windows Server 2019
+- Assigned a static IP address
+- Installed:
+  - Active Directory Domain Services (AD DS)
+  - DNS Server role
+- Promoted the server to a Domain Controller
+- Created a new domain  
+  - Example: `homelb.local`
+
+---
+
+### 3. Active Directory Configuration
+- Created Organizational Units (OUs) to reflect enterprise structure:
+  - Users
+  - Workstations
+  - IT
+- Created domain user accounts:
+  - Standard user accounts
+  - Administrative accounts
+- Configured basic Group Policy Objects (GPOs) for:
+  - Password policies
+  - User authentication behavior
+
+---
+
+### 4. Workstation Setup (WIN10-01)
+- Installed Windows 10 Enterprise
+- Joined the workstation to the Active Directory domain
+- Verified:
+  - Domain authentication
+  - Domain user login functionality
+- Simulated standard user activity to validate environment stability
+
+---
+
+## Learning Objectives
+
+By completing this prerequisite lab, the following competencies are demonstrated:
+
+- Deployment of a functional **Active Directory domain**
+- Configuration of Windows Server as a Domain Controller
+- Understanding of **identity and access management fundamentals**
+- Domain user and workstation lifecycle management
+- Enterprise-style Active Directory organizational structure
+- Preparation of a clean baseline environment for security testing
+
+---
+
+## Why This Phase Matters
+
+A properly configured Active Directory environment is critical for:
+- Realistic attack simulation
+- Accurate detection engineering
+- Meaningful SOC investigations
+
+This phase ensures all future security testing is performed against a **stable, enterprise-authentic identity infrastructure**, allowing analysis to focus on attacker behavior rather than configuration issues.
+
+---
+
